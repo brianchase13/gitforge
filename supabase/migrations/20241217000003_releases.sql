@@ -3,7 +3,7 @@
 -- ============================================================================
 
 CREATE TABLE IF NOT EXISTS releases (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   repository_id UUID NOT NULL REFERENCES repositories(id) ON DELETE CASCADE,
   tag_name TEXT NOT NULL,
   target_commitish TEXT NOT NULL DEFAULT 'main',

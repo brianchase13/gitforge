@@ -3,7 +3,7 @@
 -- ============================================================================
 
 CREATE TABLE IF NOT EXISTS branch_protection_rules (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   repository_id UUID NOT NULL REFERENCES repositories(id) ON DELETE CASCADE,
   pattern TEXT NOT NULL,
   require_pull_request BOOLEAN DEFAULT FALSE,
